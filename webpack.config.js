@@ -1,6 +1,8 @@
 const path = require("path");
 
 module.exports = {
+  mode: "production",
+  target: ["web", "es5"],
   entry: "./src/index.tsx",
   module: {
     rules: [
@@ -18,5 +20,9 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "index.js",
     publicPath: "dist/",
+  },
+  devServer: {
+    hot: true,
+    open: true,
   },
 };
